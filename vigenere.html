@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vigenere Cipher</title>
+	<link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
+	<script type="text/javascript" src="./script/vigenere.js"></script>
+	<script type="text/javascript" src="./script/file_reader.js"></script>
+	<script type="text/javascript" src="./script/save_file.js"></script>
+</head>
+<body>
+	<div class="container-fluid p-5 bg-primary text-white text-center">
+		<h2>Vigenere Ciphers Standart</h2>
+		<p>Aplication for Encryption And Decryption</p>
+	</div>
+
+	<div class="m-3">
+		<a href="index.html" class="btn btn-secondary">Home</a>
+		<div class="mt-5">
+			<input type='file' accept="text/plain" onchange='onChooseFile(event, onFileLoad.bind(this, "text"))' />
+		</div>
+		<form action="#" method="get" onsubmit="return false">
+			<div class="mb-3 mt-3">
+				<label for="text">Text : </label>
+				<input type="text" class="form-control" id="text" placeholder="Masukan Text">
+			</div>
+			<div class="mb-3 mt-3">
+				<label for="key">Key : </label>
+				<input type="text" class="form-control" id="key" placeholder="Masukan Key">
+			</div>
+			<button type="submit" class="btn btn-primary" onclick="doCrypt(false)">Encrypt</button>
+			<button type="submit" class="btn btn-primary" onclick="doCrypt(true)">Decrypt</button>
+			<div class="mb-3 mt-3">
+				<label for="text">Result : </label>
+				<textarea class="form-control" rows="3" id="result"></textarea>
+			</div>
+			<button type="submit" class="btn btn-secondary" onclick="saveToFile()">Save File</button>
+		</form>
+	</div>
+</body>
+</html>
